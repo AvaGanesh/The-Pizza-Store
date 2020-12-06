@@ -1,0 +1,73 @@
+.card-img {
+    width: 100%;
+    height: 230px;
+    border-radius: 8px;
+}
+
+.card {
+    max-width: 380px;
+    border-radius: 4px;
+    padding: 10px 10px;
+    border: 1px solid #fff;
+    contain: content;
+    transition: all .3s ease-in-out;
+}
+
+
+div.card:hover {
+    border-color: #d3d5df;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    z-index: 500;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+
+.rating {
+    height: 20px;
+    padding: 0 5px;
+    font-weight: 400;
+    background-color: #48c479;
+
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+    color: white;
+    padding-top: 2px;
+    margin-right: 4px;
+    // db7c38 -> medium
+}
+
+
+
+
+.price {
+    padding-left: 8px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.description {
+    padding-left: 8px;
+    font-size: 14px;
+}
+
+
+.white-icon {
+    color: white;
+}
+
+.order {
+    text-align: center;
+    cursor: pointer;
+}

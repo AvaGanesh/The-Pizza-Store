@@ -1,0 +1,43 @@
+
+ul.tab {
+    list-style-type:none;
+    margin: 0;
+    padding:6px;
+    border-radius: 5px;
+
+}
+ul.tab li {
+    float: left;
+    padding: 0px;
+}
+
+.large-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul.tab li label {
+  background: white;  
+  padding: 0px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+}
+ul.tab li input[type="radio"] {
+    opacity: 0;
+    width:1px;
+    height:1px;
+}
+
+ul.tab li input[type="radio"]:checked ~ label {
+    background: #cdcdcd;
+    color: black;
+}
+
+.center {
+    margin-left: 10px;
+    width: 20px;
+    height: 25px;
+    margin-top: 4px;
+}

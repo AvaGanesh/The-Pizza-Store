@@ -1,0 +1,72 @@
+<div class="container">
+    <div *ngIf="cartItems.length > 0;else noDataTemplate">
+        <div class="row">
+            <div class="col-9">
+                <h3>
+                    Checkout Items
+                </h3>
+            </div>
+            <div class="col-3">
+                <h3>
+                    Price Details
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <div *ngFor="let data of cartItems">
+                    <app-checkout-card [orderDetails]="data" (orderUpdated)="orderUpdated($event)"></app-checkout-card>
+                </div>
+            </div>
+            <div class="col-3">
+                <mat-card class="full-width">
+                    <div fxLayout="row" class="calc-row" fxLayoutAlign="space-between">
+                        <mat-label>
+                            Sub Total
+                        </mat-label>
+                        <h5 class="amount">
+                            &#8377; {{totalPrice}}
+                        </h5>
+                    </div>
+                    <div fxLayout="row" class="calc-row" fxLayoutAlign="space-between">
+                        <mat-label>
+                           Discount
+                        </mat-label>
+                        <h5 class="amount">
+                           -
+                        </h5>
+                    </div>
+                    <div fxLayout="row" class="calc-row" fxLayoutAlign="space-between">
+                        <mat-label>
+                           Delivery Charges
+                        </mat-label>
+                        <h5 class="amount">
+                            &#8377; {{deliveryCharges}}
+                        </h5>
+                    </div>
+                    <mat-divider style="margin-top: 10px;">
+                    
+                    </mat-divider>
+                    <div fxLayout="row" class="calc-row" style="padding-top: 10px;" fxLayoutAlign="space-between">
+                        <mat-label>
+                           Total Price
+                        </mat-label>
+                        <h5 class="amount total">
+                            &#8377; {{deliveryCharges + totalPrice}} 
+                        </h5>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+       
+    </div>
+    <ng-template #noDataTemplate>
+        <div class="container no-items">
+            <ng-lottie containerClass="lottie-animation"  width="400px"
+            height="300px" style="margin-left: 30%;" [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+            <h5>Your shopping cart is empty add items to your cart</h5>
+        </div>
+      
+    </ng-template>
+   
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="start" style="padding-left: 3%;">
+        <mat-form-field appearance="fill">
+            <mat-label>Sort By</mat-label>
+            <mat-select (selectionChange)="sortFieldChange($event.value)" name="sort">
+              <mat-option *ngFor="let data of sortArr" [value]="data">
+                {{data}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-checkbox style="padding-left: 3%;" [(ngModel)]="isVegOnly" color="primary">Veg Only</mat-checkbox>
+    <div class="row"> 
+      
+            <div fxLayout="row" fxLayoutAlign="space-around" *ngFor="let data of pizzaArr | sort: sortValue | filter: isVegOnly">
+                <app-pizza-card [pizzaData]="data"></app-pizza-card>
+            </div>
+        
+    </div>
+</div>

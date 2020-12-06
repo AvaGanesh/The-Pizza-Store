@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngIf="orderQuantity > 0;else showAddItemsTemplate">
+        You have {{orderQuantity}} items in your cart <br>
+        <button mat-raised-button color="primary" style="width: 100%;" (click)="goToCheckout()">Go to checkout</button>
+    </div>
+    <ng-template #showAddItemsTemplate>
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+        <h5>Your shopping cart is empty add items to your cart</h5>
+    </ng-template>
+</div>

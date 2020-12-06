@@ -1,0 +1,74 @@
+<div class="container"  *ngIf="!isLoading;else showLoadingTemplate">
+
+   
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <h2>
+                {{pizza.name}}
+            </h2>
+            <mat-icon class="close" (click)="close()"> close</mat-icon>
+        </div>
+        <div fxLayout="row">
+            <img src="{{pizza.img_url}}" alt="Image">
+        </div>
+
+        <div class="row">
+            <p>
+                {{pizza.description}}
+            </p>
+        </div>
+        <div class="row">
+
+            <h4>
+                Add Toppings
+            </h4>
+
+        </div>
+
+        <div class="row" *ngFor="let topping of pizza.toppings">
+            <mat-chip-list aria-label="Topping selection" *ngFor="let data of topping.items">
+                <mat-chip style="margin-left: 10px;margin-top: 10px;" (click)="toppingChanged(data.name)"
+                    [selected]="selectedToppings.includes(data.name)">{{data.name}}</mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="row">
+            <h4>
+                Choose Size
+            </h4>
+        </div>
+        <div class="row" *ngFor="let size of pizza.size">
+            <mat-chip-list aria-label="Size selection" *ngFor="let data of size.items">
+                <mat-chip style="margin-left: 10px;margin-top: 10px;" (click)="sizeChanged(data.size)"
+                    [selected]="selectedSize === data.size">{{data.size}}</mat-chip>
+            </mat-chip-list>
+        </div>
+      
+        <div class="row">
+            <h4>
+                Add Items
+            </h4>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <app-toggle-button [count]="count" (quantityChanged)="changeQuantity($event)"></app-toggle-button>
+
+            </div>
+            <div class="col">
+                <button mat-raised-button color="primary"
+                [disabled]="(count < 1) &&  (selectedSize !== null || selectedSize !== undefined)" (click)="savetoCart()"
+                style="float: right">Add to Cart</button>
+    
+            </div>
+        </div>
+    
+
+       
+
+
+
+
+</div>
+
+<ng-template #showLoadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>

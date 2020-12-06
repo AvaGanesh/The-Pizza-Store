@@ -1,0 +1,26 @@
+<div class="card"  (mouseover)="show()"
+(mouseleave)="hide()">
+    <img src="{{pizzaData.img_url}}" alt="img" class="card-img">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <h3>{{pizzaData.name}}</h3>
+        <div *ngIf="pizzaData.isVeg;else nonveg">
+            <img src="../../../assets/veg.png" alt="" class="icon">
+        </div>
+        <ng-template #nonveg>
+            <img src="../../../assets/non-veg.png" alt="" class="icon">
+        </ng-template>
+    </div>
+    
+    <div fxLayout="row">
+       <p class="description">{{pizzaData.description}}</p> 
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <div class="rating" fxLayout="row"><mat-icon class="white-icon">star_rate</mat-icon>{{pizzaData.rating}}</div>
+        <p class="price"> &#8377; {{pizzaData.price}}</p>
+
+    </div>
+    <mat-divider *ngIf="!hideElement"></mat-divider>
+    <h4 (click)="showPizzaDetails()" [hidden]="hideElement" class="order">ADD TO CART</h4>
+    
+</div>
