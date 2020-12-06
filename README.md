@@ -1,27 +1,23 @@
 # PizzaStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+* Sorting by Name and Price
+* Option to filter Veg Pizzas Only
+* Selecting Pizza, choosing toppings and Size and changing quantity
+* Checkout page with all the items added to cart and the billing price
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Screenshots
 
-## Running unit tests
+![picture alt](https://drive.google.com/uc?export=view&id=1mRjnk_FktBvAheHmbc47aibt5QBJ6GpM "Dashboard Image")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![picture alt](https://drive.google.com/uc?export=view&id=1yRaBH1-vYzihaatHquLoCAngMyU84aSS "Pizza Details Popup")
 
-## Running end-to-end tests
+![picture alt](https://drive.google.com/uc?export=view&id=1nNuzRvlasf9dgepwJJjV6k57j0-QlQDh "Checkout Page")
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
