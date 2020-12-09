@@ -17,7 +17,7 @@
     </div>
     <div class="row"> 
       
-            <div fxLayout="row" fxLayoutAlign="space-around" *ngFor="let data of pizzaArr | sort: sortValue | filter: isVegOnly | search : searchText">
+            <div fxLayout="row" fxLayoutAlign="space-around" *ngFor="let data of pizzaArr | filter: isVegOnly | search : searchText | sort: sortValue">
                 <app-pizza-card [pizzaData]="data"></app-pizza-card>
             </div>
         
