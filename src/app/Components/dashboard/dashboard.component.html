@@ -9,10 +9,15 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <mat-checkbox style="padding-left: 3%;" [(ngModel)]="isVegOnly" color="primary">Veg Only</mat-checkbox>
+    <div fxLayout="row"fxLayoutAlign="space-between" style="padding-left: 3%;">
+      <mat-checkbox [(ngModel)]="isVegOnly" color="primary">Veg Only</mat-checkbox>
+      <div class="col-md-5">
+        <input type="search" class="searchBox" [(ngModel)]="searchText" placeholder="Search by name">
+      </div>
+    </div>
     <div class="row"> 
       
-            <div fxLayout="row" fxLayoutAlign="space-around" *ngFor="let data of pizzaArr | sort: sortValue | filter: isVegOnly">
+            <div fxLayout="row" fxLayoutAlign="space-around" *ngFor="let data of pizzaArr | sort: sortValue | filter: isVegOnly | search : searchText">
                 <app-pizza-card [pizzaData]="data"></app-pizza-card>
             </div>
         

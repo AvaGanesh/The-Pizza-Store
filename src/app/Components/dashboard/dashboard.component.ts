@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   sortArr = ['Ratings', 'Price'];
   sortValue: string;
   pizzaArr: Pizza[];
+  searchText: string;
   constructor(private service: APIService,
               private snackBar: MatSnackBar,
               private dataShareService: DataShareService) { }

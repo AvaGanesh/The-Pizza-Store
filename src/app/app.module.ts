@@ -34,6 +34,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import {MatCardModule} from '@angular/material/card';
+import { SearchPipe } from './Pipes/search.pipe';
+import {MatInputModule} from '@angular/material/input';
 
 export function playerFactory() {
   return player;
@@ -50,7 +52,8 @@ export function playerFactory() {
     ToggleButtonComponent,
     CheckoutCardComponent,
     FilterPipe,
-    ItemMenuComponent
+    ItemMenuComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ export function playerFactory() {
     MatDialogModule,
     MatMenuModule,
     MatToolbarModule,
+    MatInputModule,
     MatButtonToggleModule,
     MatSnackBarModule,
     MatCheckboxModule,
